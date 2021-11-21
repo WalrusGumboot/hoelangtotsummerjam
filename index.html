@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -20,7 +21,7 @@
         }
 
         .bg {
-            background-image: url("https://www.sportakampen.be/storage/camp/89/periods/1606164529_periods.jpg");
+            background-image: url("https://github.com/WalrusGumboot/hoelangtotsummerjam/blob/5e7e1eb237c21175166bd674aeb40cad15671de0/Z5-Summer%20Jam-%202021-54.jpg");
 
             /* Add the blur effect */
             filter: blur(8px);
@@ -63,12 +64,12 @@
 
     <script>
         function update() {
-            var summerJam = new Date(2022, 8, 7, 13, 0, 0, 0);
+            var summerJam = new Date(2022, 7, 7, 13, 0, 0, 0);
             var diff = summerJam.getTime() - new Date().getTime();
-            var dagen = Math.round(diff / (1000*3600*24));
-            var uren = Math.round(diff / (1000*24)) % 24;
-            var minuten = Math.round(diff / (1000*60*24)) % 60;
-            var seconden = Math.round(diff / 1000) % 60;
+            var dagen = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var uren = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minuten = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconden = Math.floor((diff % (1000 * 60)) / 1000);
             document.getElementById("dagen").innerText = `${dagen} dagen, ${uren} uren, ${minuten} minuten en ${seconden} seconden`
         }
         setInterval(update, 1000);
