@@ -21,11 +21,14 @@
         }
 
         .bg {
-            background-image: url("https://github.com/WalrusGumboot/hoelangtotsummerjam/blob/5e7e1eb237c21175166bd674aeb40cad15671de0/Z5-Summer%20Jam-%202021-54.jpg");
+            background-image: url("bg.jpg");
 
-            /* Add the blur effect */
-            filter: blur(8px);
-            -webkit-filter: blur(8px);
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
 
             /* Full height */
             height: 100%;
@@ -49,6 +52,9 @@
             width: 80%;
             padding: 20px;
             text-align: center;
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
     </style>
 </head>
