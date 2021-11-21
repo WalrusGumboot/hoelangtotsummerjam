@@ -58,12 +58,17 @@
     <div class="bg-text">
         <p>het is nog</p> <br>
         <h1 id="dagen" style="margin-top: 8px; margin-bottom: 8px; font-size: 120;"></h1> <br>
-        <p>dagen tot summer jam.</p>
+        <p>dagen tot Summer Jam.</p>
     </div>
 
     <script>
         var summerJam = new Date(2022, 8, 7, 13, 0, 0, 0);
-        document.getElementById("dagen").innerText = Math.round((summerJam - new Date()) / (1000*60*60*24));
+        var diff = summerJam.getTime() - new Date().getTime();
+        var dagen = Math.round(diff / (1000*3600*24));
+        var uren = Math.round(diff / (1000*24)) % 24;
+        var minuten = Math.round(diff / (1000*60*24)) % 60;
+        var seconden = Math.round(diff / 1000) % 60;
+        document.getElementById("dagen").innerText = `${dagen} dagen, ${uren} ${minuten} minuten en ${seconden} seconden`
     </script>
 
     <div style="position: absolute; bottom: 0%; right: 0%; left: 0; width: 100vw; background-color: lightcoral; text-align: center; padding: 8px;">
