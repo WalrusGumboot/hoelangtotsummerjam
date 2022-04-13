@@ -65,7 +65,7 @@
     <div class="bg-text">
         <p>het is nog</p> <br>
         <h1 id="dagen" style="margin-top: 8px; margin-bottom: 8px; font-size: 40;"></h1> <br>
-        <p>dagen tot Summer Jam.</p>
+        <p>tot Summer Jam.</p>
     </div>
 
     <script>
@@ -76,7 +76,9 @@
             var uren = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minuten = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             var seconden = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById("dagen").innerText = `${dagen} dagen, ${uren} uren, ${minuten} minuten en ${seconden} seconden`
+
+
+            document.getElementById("dagen").innerText = `${dagen} ${dagen != 1 ? "dagen" : "dag"}, ${uren} ${uren != 1 ? "uren" : "uur"}, ${minuten} ${minuten != 1 ? "minuten" : "minuut"} en ${seconden} ${seconden != 1 ? "seconden" : "seconde"}`
         }
         setInterval(update, 1000);
     </script>
